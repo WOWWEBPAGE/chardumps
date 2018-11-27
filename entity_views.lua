@@ -124,7 +124,7 @@ function entityViews:UpdatePlayerView(frame)
     fontStr:SetText(s .. " " .. bgName);
   end
 
-  if criterias ~= nil then
+  --[[if criterias ~= nil then
     local bgWinAndTotalCriterias = {
       ["AlteracValley"]  = {["win"] = 100, ["total"] = 104, ["text"] = L["Alterac Valley"]},
       ["EyeOfTheStorm"]  = {["win"] = 5745, ["total"] = 105, ["text"] = L["Eye of the Storm"]},
@@ -132,11 +132,12 @@ function entityViews:UpdatePlayerView(frame)
       ["WarsongGulch"]   = {["win"] = 140, ["total"] = 5747, ["text"] = L["Warsong Gulch"]},
       ["IsleOfConquest"] = {["win"] = 11959, ["total"] = 11958, ["text"] = L["Isle of Conquest"]},
     };
+	
     for name, t in pairs(bgWinAndTotalCriterias) do
       setBgValue(widgets["fontStr" .. name], t.text, t.win, t.total);
     end
     widgets.fontStrBgTotal:SetText(L["Battleground"] .. " ".. formatBgValues(sumWin, sumTotal));
-  end
+  end]]--
 
   frame.widgets = widgets;
 end
