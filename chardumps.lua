@@ -29,7 +29,7 @@ function chardumps:GetPatchVersion()
 	  self.patchVertion = 0;
 		local _, clientBuild = GetBuildInfo();
 		clientBuild = tonumber(clientBuild);
-		if clientBuild >= 6080 and clientBuild <= 8478 then
+		if clientBuild >= 6080 and clientBuild <= 8606 then
 			self.patchVertion = 2;
 		elseif clientBuild >= 9056 and clientBuild <= 12340 then
 			self.patchVertion = 3;

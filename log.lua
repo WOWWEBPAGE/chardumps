@@ -4,7 +4,7 @@ local log = {};
 function log:Message(...)
   local x = {...};
   for k, v in pairs(x) do
-    print("\124cFF9F3FFFchardumps:\124r ", v);
+    -- print(string.format("\124cFF9F3FFFchardumps:\124c00FF0000 %s\124r ", v));
   end
 end
 

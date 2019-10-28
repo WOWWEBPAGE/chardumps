@@ -94,9 +94,9 @@ function entityViews:UpdatePlayerView(frame)
   end
 
   if player ~= nil then
-    widgets.fontStrHonor:SetText(L.Honor .. " = " .. player.honor);
-    widgets.fontStrAp:SetText(L.Ap .. " = " .. player.ap);
-    widgets.fontStrKills:SetText(L.Kills .. " = " .. player.kills);
+    -- widgets.fontStrHonor:SetText(L.Honor .. " = " .. player.honor);
+    -- widgets.fontStrAp:SetText(L.Ap .. " = " .. player.ap);
+    -- widgets.fontStrKills:SetText(L.Kills .. " = " .. player.kills);
   end
 
   local criterias = chardumps.dumper:GetEntity("statistic");
@@ -160,7 +160,7 @@ function entityViews:UpdateInventoryView(frame)
     scrollingMessageFrame:SetFontObject(GameFontNormal);
     scrollingMessageFrame:SetTextColor(1, 1, 1, 1);
     scrollingMessageFrame:SetJustifyH("LEFT");
-    scrollingMessageFrame:SetHyperlinksEnabled(true);
+    -- scrollingMessageFrame:SetHyperlinksEnabled(true);
     scrollingMessageFrame:SetFading(false);
     scrollingMessageFrame:SetInsertMode("bottom");
     scrollingMessageFrame:Show();
@@ -172,7 +172,7 @@ function entityViews:UpdateInventoryView(frame)
     local scrollBar = CreateFrame("Slider", nil, frame, "UIPanelScrollBarTemplate")
     scrollBar:ClearAllPoints();
     scrollBar:SetPoint("RIGHT", frame, "RIGHT", 0, 0);
-    scrollBar:SetSize(30, frame:GetHeight() - startY - 10 - 10);
+    -- scrollBar:SetSize(30, frame:GetHeight() - startY - 10 - 10);
     scrollBar:SetMinMaxValues(0, 100);
     scrollBar:SetValueStep(1);
     scrollBar.scrollStep = 1;

@@ -36,6 +36,7 @@ function dumper:Dump(options)
   dump.CHD_FIELD_COUNT = self:GetCounts(dump);
 
   if options.crypt then
+    -- CHD_CLIENT = dump;
     local json = chardumps.encryption:toJson(dump);
     CHD_CLIENT = b64_encode(json);
   else
@@ -672,11 +673,11 @@ function dumper:GetPvpCurrency(currency)
 
   return res;
 end
-
+-- 
 function dumper:GetPlayerData()
   local res  = {};
   local L = chardumps:GetLocale();
-  local pvpCurrency = dumper:GetPvpCurrency();
+  -- local pvpCurrency = dumper:GetPvpCurrency();
 
   chardumps.log:Message(L.GetPlayer);
 
@@ -690,17 +691,17 @@ function dumper:GetPlayerData()
   local honorableKills = GetPVPLifetimeStats()
   res.kills            = honorableKills;
   res.money            = math.floor(GetMoney() / 10000); -- convert to gold
-  if type(GetNumTalentGroups) == "function" then
-    res.specs            = GetNumTalentGroups();
-  end
-  if type(GetActiveSpecGroup) == "function" then
-    res.active_spec = GetActiveSpecGroup();
-  end
+  -- if type(GetNumTalentGroups) == "function" then
+    -- res.specs            = GetNumTalentGroups();
+  -- end
+  -- if type(GetActiveSpecGroup) == "function" then
+    -- res.active_spec = GetActiveSpecGroup();
+  -- end
   res.health           = UnitHealth("player");
   res.mana             = UnitMana("player");
-  res.honor            = pvpCurrency.honor;
-  res.ap               = pvpCurrency.ap;
-  res.cp               = pvpCurrency.cp;
+  -- res.honor            = pvpCurrency.honor;
+  -- res.ap               = pvpCurrency.ap;
+  -- res.cp               = pvpCurrency.cp;
 
   return res;
 end
